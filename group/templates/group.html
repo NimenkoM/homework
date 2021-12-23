@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Group list</title>
+</head>
+<body>
+
+<h1>Welcome to our group</h1>
+
+<a href="{% url 'create-group' %}">Create Group</a>
+
+<h3>Group list</h3>
+
+<ul>
+    {% for group in groups %}
+
+        <li>
+            <a href="{% url 'group-detail' group_id=group.pk %}">{{ forloop.counter }}. {{ group.full_name }}</a>
+        </li>
+
+    {% endfor %}
+
+
+</ul>
+
+</body>
+</html>

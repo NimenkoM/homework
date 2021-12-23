@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher list</title>
+</head>
+<body>
+
+<h1>Teacher</h1>
+
+<a href="{% url 'create-teacher' %}">Create Teacher</a>
+
+<h3>Teacher list</h3>
+
+<ul>
+    {% for teacher in teachers %}
+
+        <li>
+            <a href="{% url 'teacher-detail' teacher_id=teacher.pk %}">{{ forloop.counter }}. {{ teacher.full_name }}</a>
+        </li>
+
+    {% endfor %}
+
+
+</ul>
+
+</body>
+</html>

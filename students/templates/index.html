@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students list</title>
+</head>
+<body>
+
+<h1>Welcome to our school</h1>
+
+<a href="{% url 'create-student' %}">Create Student</a>
+
+<h3>Students list</h3>
+
+<ul>
+    {% for student in students %}
+
+        <li>
+            <a href="{% url 'student-detail' student_id=student.pk %}">{{ forloop.counter }}. {{ student.full_name }}</a>
+        </li>
+
+    {% endfor %}
+
+
+</ul>
+
+</body>
+</html>
